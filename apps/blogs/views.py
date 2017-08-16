@@ -7,20 +7,20 @@ from django.shortcuts import render, redirect, HttpResponse
 # Create your views here.
 
 def index(request):
-	return HttpResponse("Start Here")
+	return render(request, 'blogs/index.html')
 
 
 def new(request):
 	return HttpResponse("New blog")
 
 
-def create(request, nblogs):
-	return redirect('/blogs')
+def create(request):
+	return redirect('/')
 
 
 
 def show(request, bnum):
-	print bnum
+	
 	return HttpResponse("hello" + bnum)
 
 
@@ -30,4 +30,4 @@ def edit(request, enum):
 
 
 def destory(request, dnum):
-	return redirect('/blogs')
+	return redirect(request,'/blogs')
